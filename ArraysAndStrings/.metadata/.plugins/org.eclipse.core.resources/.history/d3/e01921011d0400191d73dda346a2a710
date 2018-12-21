@@ -1,0 +1,142 @@
+/**
+ * @author IceAuror
+ *
+ */
+public class ChapterOne {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		System.out.println("Solutions to Chapter 1 of CTCI");
+//		String testString = "You live once, and die once. Better make it work it";
+//		String testString_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`-=[];',./~!@#$%^&*()_+{}|:<>?";
+//		System.out.println(isUnique(testString)? "YES": "NO");
+//		System.out.println(isUnique(testString_1)? "YES": "NO");
+//		System.out.println(checkPermutation("abcdefghijklmnopqrstuvwxyz","mnbvcxzlkjhgfdsapoiuytrewq")? "YES": "NO");
+//		System.out.println(checkPermutation("babbababa","abbaa")? "YES": "NO");
+//		System.out.println(uRLify("Mr John Smith      ".toCharArray(), 13));
+		System.out.println(oneAway("pale","ple")? "YES": "NO");
+		System.out.println(oneAway("pales","pale")? "YES": "NO");
+		System.out.println(oneAway("pale","bale")? "YES": "NO");
+		System.out.println(oneAway("pale","bake")? "YES": "NO");
+	}
+
+	/**
+	 * @param s String input
+	 * @return true/false
+	 * Checks if the String has all unique characters
+	 * RunTime complexity: O(LengthOfString)
+	 */
+	public static boolean isUnique(String s){
+		s = s.toLowerCase();
+		boolean allCharacters[] = new boolean[128];
+		for (boolean b: allCharacters){
+			b = false;
+		}
+		for (char c: s.toCharArray()){
+			if(allCharacters[c]){
+				return false;
+			}
+			else{
+				allCharacters[c] = true;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * @param string_1 String one
+	 * @param string_2 String two
+	 * @return true/false
+	 * Checks if string 2 is a permutation of string 1
+	 */
+	public static boolean checkPermutation(String string_1, String string_2){
+		if (string_1.length()!=string_2.length())
+			return false;
+		string_1 = sortString(string_1);
+		string_2 = sortString(string_2);
+		return (string_1.equals(string_2));
+	}
+	
+	/**
+	 * @param stringToBeSorted
+	 * @return String with characters sorted alphabetically
+	 * Accepts an unsorted string and returns the string with its characters sorted 
+	 */
+	public static String sortString(String stringToBeSorted){
+		char[] characterArray = stringToBeSorted.toCharArray();
+		java.util.Arrays.sort(characterArray);
+		return new String(characterArray);
+	}
+	
+	/**
+	 * @param stringToBeURLified
+	 * @param trueLength
+	 * @return string that has been URLified
+	 * Returns a string after URLifying it
+	 */
+	public static char[] uRLify(char[] stringToBeURLified, int trueLength){
+		int space_count = 0;
+		int index_offset = 0;
+		int stringLength = stringToBeURLified.length;
+		for(int i=0; i<trueLength; i++){
+			if (stringToBeURLified[i]==' ')
+				space_count++;
+		}
+		index_offset = space_count*2+trueLength;
+		for(int j=trueLength-1; j>=0; j--){
+			if(stringToBeURLified[j]!= ' '){
+				stringToBeURLified[index_offset-1] = stringToBeURLified[j];
+				index_offset--;
+			}else {
+				stringToBeURLified[index_offset-1] = '0';
+				stringToBeURLified[index_offset-2] = '2';
+				stringToBeURLified[index_offset-3] = '%';
+				index_offset = index_offset-3;
+			}
+		}
+		return(stringToBeURLified);
+	}
+	
+	public static boolean oneAway(String string_1, String string_2){
+		switch(checkLengthDifference(string_1, string_2)){
+		case 0: return checkReplace(string_1, string_2);
+		case 1: return checkRemoveOrInsert(string_1, string_2);
+		case 2: return false;
+		default: return false;
+		}
+	}
+	
+	public static int checkLengthDifference(String string_1, String string_2){
+		System.out.println(string_1.length()-string_2.length());
+		return(string_1.length()-string_2.length());
+	}
+	
+	public static boolean checkReplace(String string_1, String string_2){
+		int count = 0;
+		for(int i=0; i<string_1.length(); i++){
+			if(string_1.charAt(i)!=string_2.charAt(i)){
+				count++;
+			}
+		}
+		if (count > 1)
+			return false;
+		else
+			return true;
+	}
+
+	public static boolean checkRemoveOrInsert(String string_1, String string_2){
+		int count = 0;
+		for(char c: string_1.toCharArray()){
+			if(string_2.contains(c+"")){
+				count++;
+			}
+		}
+		if(count>1)
+			return false;
+		else
+			return true;
+	}	
+}
