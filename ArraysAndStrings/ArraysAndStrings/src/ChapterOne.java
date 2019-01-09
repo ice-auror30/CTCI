@@ -13,39 +13,42 @@ public class ChapterOne {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out.println("Solutions to Chapter 1 of CTCI");
-//		String testString = "You live once, and die once. Better make it work it";
-//		String testString_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`-=[];',./~!@#$%^&*()_+{}|:<>?";
-//		System.out.println(isUnique(testString)? "YES": "NO");
-//		System.out.println(isUnique(testString_1)? "YES": "NO");
-//		System.out.println(checkPermutation("abcdefghijklmnopqrstuvwxyz","mnbvcxzlkjhgfdsapoiuytrewq")? "YES": "NO");
-//		System.out.println(checkPermutation("babbababa","abbaa")? "YES": "NO");
-//		System.out.println(uRLify("Mr John Smith      ".toCharArray(), 13));
-//		System.out.println(oneAway("caesar","caesa")? "YES": "NO");
-//		System.out.println(oneAway("caes","baes")? "YES": "NO");
-//		System.out.println(oneAway("daesar","caesar")? "YES": "NO");
-//		System.out.println(oneAway("baluuua","baluaaa")? "YES": "NO");
-//		System.out.println(palindromePermutaiton("Tact Coa")?"YES":"NO");
-//		System.out.println(stringCompression("aabcccccaaaaabcccccaaaaabcccccaaa"));
-//		System.out.println(stringRotation("waterbottle", "erbottlewat")?"YES":"NO");
-//		int[][]M = {{1,2,3,4},{2,3,4,1},{3,4,1,2},{4,1,2,3}};
-//		int[][] rotateMatrix = new int[M.length][M.length];
-//		rotateMatrix= rotateMatrix(M);
-//		for(int i=0; i<M.length;i++){
-//			for(int j=0;j<M.length; j++){
-//				System.out.print(rotateMatrix[i][j]+ " ");
-//			}
-//			System.out.println();
-//		}
-		int[][]M = {{1,2,1,4},{2,0,4,1},{3,4,1,2},{4,1,2,2}};
-		int[][] zeroMatrix = new int[M.length][M.length];
-		zeroMatrix= zeroMatrix(M);
-		for(int i=0; i<M.length;i++){
-			for(int j=0;j<M.length; j++){
-				System.out.print(zeroMatrix[i][j]+ " ");
-			}
-			System.out.println();
-		}
+		//		System.out.println("Solutions to Chapter 1 of CTCI");
+		//		String testString = "You live once, and die once. Better make it work it";
+		//		String testString_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`-=[];',./~!@#$%^&*()_+{}|:<>?";
+		//		System.out.println(isUnique(testString)? "YES": "NO");
+		//		System.out.println(isUnique(testString_1)? "YES": "NO");
+		//		System.out.println(checkPermutation("abcdefghijklmnopqrstuvwxyz","mnbvcxzlkjhgfdsapoiuytrewq")? "YES": "NO");
+		//		System.out.println(checkPermutation("babbababa","abbaa")? "YES": "NO");
+		//		System.out.println(uRLify("Mr John Smith      ".toCharArray(), 13));
+		//		System.out.println(oneAway("caesar","caesa")? "YES": "NO");
+		//		System.out.println(oneAway("caes","baes")? "YES": "NO");
+		//		System.out.println(oneAway("daesar","caesar")? "YES": "NO");
+		//		System.out.println(oneAway("baluuua","baluaaa")? "YES": "NO");
+		//		System.out.println(palindromePermutaiton("Tact Coa")?"YES":"NO");
+		//		System.out.println(stringCompression("aabcccccaaaaabcccccaaaaabcccccaaa"));
+		//		System.out.println(stringRotation("waterbottle", "erbottlewat")?"YES":"NO");
+		//		int[][]M = {{1,2,3,4},{2,3,4,1},{3,4,1,2},{4,1,2,3}};
+		//		int[][] rotateMatrix = new int[M.length][M.length];
+		//		rotateMatrix= rotateMatrix(M);
+		//		for(int i=0; i<M.length;i++){
+		//			for(int j=0;j<M.length; j++){
+		//				System.out.print(rotateMatrix[i][j]+ " ");
+		//			}
+		//			System.out.println();
+		//		}
+		//		int[][]M = {{1,2,1,4},{2,0,4,1},{3,4,1,2},{4,1,2,2}};
+		//		int[][] zeroMatrix = new int[M.length][M.length];
+		//		zeroMatrix= zeroMatrix(M);
+		//		for(int i=0; i<M.length;i++){
+		//			for(int j=0;j<M.length; j++){
+		//				System.out.print(zeroMatrix[i][j]+ " ");
+		//			}
+		//			System.out.println();
+		//		}
+		//		int arr1[] = {1,3,5,7,9,11};
+		//		int arr2[] = {2,4,6,10};
+		//		mergeList(arr1, arr2);
 	}
 
 	/**
@@ -70,7 +73,7 @@ public class ChapterOne {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param string_1 String one
 	 * @param string_2 String two
@@ -85,7 +88,7 @@ public class ChapterOne {
 		string_2 = sortString(string_2);
 		return (string_1.equals(string_2));
 	}
-	
+
 	/**
 	 * @param stringToBeSorted
 	 * @return String with characters sorted alphabetically
@@ -97,7 +100,7 @@ public class ChapterOne {
 		java.util.Arrays.sort(characterArray);
 		return new String(characterArray);
 	}
-	
+
 	/**
 	 * @param stringToBeURLified
 	 * @param trueLength
@@ -127,7 +130,7 @@ public class ChapterOne {
 		}
 		return(stringToBeURLified);
 	}
-	
+
 	/**
 	 * @param string_1
 	 * @param string_2
@@ -144,7 +147,7 @@ public class ChapterOne {
 		default: return false;
 		}
 	}
-	
+
 	/**
 	 * @param string_1
 	 * @param string_2
@@ -155,7 +158,7 @@ public class ChapterOne {
 	public static int checkLengthDifference(String string_1, String string_2){
 		return(Math.abs(string_1.length()-string_2.length()));
 	}
-	
+
 	/**
 	 * @param string_1
 	 * @param string_2
@@ -195,7 +198,7 @@ public class ChapterOne {
 		else
 			return true;
 	}	
-	
+
 	/**
 	 * @param str
 	 * @return true/false
@@ -229,7 +232,7 @@ public class ChapterOne {
 			return false;
 		return true;
 	}
-	
+
 	/**
 	 * @param str
 	 * @return String
@@ -250,7 +253,7 @@ public class ChapterOne {
 		}
 		return ((str.length()-1 > compressedString.length())? compressedString : str.substring(0, str.length()-1));
 	}
-	
+
 	/**
 	 * @param s1
 	 * @param s2
@@ -265,7 +268,7 @@ public class ChapterOne {
 		String s1s1 = s1+s1;
 		return (isSubstring(s1s1, s2));
 	}
-	
+
 	/**
 	 * @param s1
 	 * @param s2
@@ -284,7 +287,7 @@ public class ChapterOne {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * @param M
 	 * @return rotateMatrix
@@ -302,7 +305,7 @@ public class ChapterOne {
 		}		
 		return rotateMatrix;
 	}
-	
+
 	/**
 	 * @param M
 	 * @return the Zero Matrix
@@ -326,7 +329,7 @@ public class ChapterOne {
 				}
 			}
 		}
-		
+
 		for(int i=0;i<row_index.size();i++){
 			for(int j=0;j<N;j++){
 				M[row_index.get(i)][j] = 0;
@@ -335,7 +338,49 @@ public class ChapterOne {
 				M[k][column_index.get(i)] = 0;
 			}
 		}
-		
+
 		return M;
+	}
+
+	public static void mergeList(int[] arr1, int[] arr2){
+		int size_arr1 = arr1.length;
+		int size_arr2 = arr2.length;
+		int merge_arr[] = new int[size_arr1+size_arr2];
+		int a1 = 0;
+		int a2 = 0;
+		int merge_counter = 0;	
+		for(int i=0;i< size_arr1+size_arr2; i++){
+			merge_counter = i;
+			if(arr1[a1]<arr2[a2]){
+				merge_arr[i] = arr1[a1];
+				System.out.println(merge_arr[i]);
+				a1=a1+1;
+				if(a1>=size_arr1)
+					break;
+			}
+			else{
+				merge_arr[i]= arr2[a2];
+				System.out.println(merge_arr[i]);
+				a2=a2+1;
+				if(a2>=size_arr2)
+					break;
+			}	
+		}
+		merge_counter = merge_counter+1;	
+
+		if(a1==size_arr1){
+			for(int j=a2;j<size_arr2;j++){
+				merge_arr[merge_counter] = arr2[j];
+				++merge_counter;
+			}
+		}else {
+			for(int j=a1;j<size_arr1;j++){
+				merge_arr[merge_counter] = arr1[j];
+				++merge_counter;				
+			}
+			for(int i=0;i<merge_arr.length;i++){
+				System.out.println(merge_arr[i]);
+			}
+		}
 	}
 }
